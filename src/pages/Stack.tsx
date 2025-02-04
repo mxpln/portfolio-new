@@ -1,5 +1,5 @@
 import React from 'react';
-import { Code, Server, Database, Cpu } from 'lucide-react';
+import { Code, Server, Cpu } from 'lucide-react';
 
 export const Stack: React.FC = () => {
   const stack = {

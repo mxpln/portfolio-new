@@ -1,6 +1,6 @@
 import React from 'react';
 import { projects } from './index';
-import { Github, Globe, ArrowRight, Clock, Calendar } from 'lucide-react';
+import { Github, Globe, ArrowRight, Calendar } from 'lucide-react';
 
 interface ProjectProps {
   id: string;

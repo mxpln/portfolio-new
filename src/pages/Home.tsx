@@ -1,5 +1,5 @@
 import React from 'react';
-import { Code, Folder, Mail } from 'lucide-react';
+import { Code } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { projects } from './index';
 
