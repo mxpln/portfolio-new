@@ -16,15 +16,17 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18'  # Updated Node.js version
+          node-version: '18'
 
       - name: Install dependencies
-        run: npm install
+        run: npm install${{ vars.ENV_CONTEXT_VAR }}
 
       - name: Build the application
         run: npm run build
 
       - name: Deploy to GitHub Pages
         run: |
+          git config --global user.email ${{ vars.EMAIL }}
+          git config --global user.name "mxpln"
           npm install -g gh-pages
           gh-pages -d dist
