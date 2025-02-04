@@ -19,14 +19,16 @@ jobs:
           node-version: '18'
 
       - name: Install dependencies
-        run: npm install${{ vars.ENV_CONTEXT_VAR }}
+        run: npm install
 
       - name: Build the application
         run: npm run build
 
       - name: Deploy to GitHub Pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config --global user.email "paolonemax@gmail.com"
           git config --global user.name "mxpln"
           npm install -g gh-pages
-          gh-pages -d dist
+          gh-pages -d dist -t $GITHUB_TOKEN
